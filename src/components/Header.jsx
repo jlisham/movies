@@ -22,9 +22,10 @@ class Header extends Component {
             <div className="col-md-8">
               <form onSubmit={this.submitHandler}>
                 <input
+                  name="search"
                   ref="searchTf"
                   type="search"
-                  placeholder="search..."
+                  placeholder="search the movie database..."
                   className="form-control"
                 />
               </form>
