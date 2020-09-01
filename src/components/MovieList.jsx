@@ -17,7 +17,7 @@ class MovieList extends Component {
     Axios.get(`https://www.omdbapi.com/?apikey=9c1141fc&s=${q.searchText}`)
       .then((res) => res.data)
       .then((data) => data.Search)
-      .then((movies) => this.setState({ movies }));
+      .then((movies) => (movies ? this.setState({ movies }) : null));
   };
   render() {
     const movieList = this.state.movies.map((m, index) => (
