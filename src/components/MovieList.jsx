@@ -20,9 +20,9 @@ class MovieList extends Component {
       .then((movies) => (movies ? this.setState({ movies }) : null));
   };
   render() {
-    const movieList = this.state.movies.map((m, index) => (
-      <MovieCard movie={m} key={index} />
-    ));
+    const movieList = this.state.movies
+      ? this.state.movies.map((m, index) => <MovieCard movie={m} key={index} />)
+      : "no movies returned in that search";
     return <div className="row">{movieList}</div>;
   }
 }
