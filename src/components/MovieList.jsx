@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Axios from "axios";
 import queryString from "query-string";
 import MovieCard from "./MovieCard";
@@ -20,10 +20,23 @@ class MovieList extends Component {
       .then((movies) => (movies ? this.setState({ movies }) : null));
   };
   render() {
-    const movieList = this.state.movies
-      ? this.state.movies.map((m, index) => <MovieCard movie={m} key={index} />)
-      : "no movies returned in that search";
-    return <div className="row">{movieList}</div>;
+    const movieList =
+      this.state.movies !== 0
+        ? this.state.movies.map((m, index) => (
+            <MovieCard movie={m} key={index} />
+          ))
+        : null;
+    return (
+      <div className="row">
+        {movieList.length > 0 ? (
+          <Fragment>{movieList}</Fragment>
+        ) : (
+          <Fragment>
+            <em>Your search yielded no results</em>
+          </Fragment>
+        )}
+      </div>
+    );
   }
 }
 
