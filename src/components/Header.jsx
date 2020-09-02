@@ -20,18 +20,20 @@ class Header extends Component {
               </h3>
             </div>
             <div className="col-md-8">
-              <form id="searchMovieDb" onSubmit={this.submitHandler}>
-                <label htmlFor="search">
-                  {" "}
+              <label htmlFor="searchMovieDb">
+                <form id="searchMovieDb" onSubmit={this.submitHandler}>
+                  <label htmlFor="search" />
                   <input
+                    aria-describedby="fldDesc"
                     id="search"
                     ref="searchTf"
                     type="search"
                     placeholder="search the movie database..."
                     className="form-control"
                   />
-                </label>
-              </form>
+                  <span id="fldDesc">Enter a movie title</span>
+                </form>
+              </label>
             </div>
           </div>
         </div>
