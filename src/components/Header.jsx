@@ -21,13 +21,16 @@ class Header extends Component {
             </div>
             <div className="col-md-8">
               <form onSubmit={this.submitHandler}>
-                <input
-                  name="search"
-                  ref="searchTf"
-                  type="search"
-                  placeholder="search the movie database..."
-                  className="form-control"
-                />
+                <label htmlFor="search">
+                  {" "}
+                  <input
+                    name="search"
+                    ref="searchTf"
+                    type="search"
+                    placeholder="search the movie database..."
+                    className="form-control"
+                  />
+                </label>
               </form>
             </div>
           </div>
