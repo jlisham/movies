@@ -20,21 +20,18 @@ class Header extends Component {
               </h3>
             </div>
             <div className="col-md-8">
-              <label htmlFor="searchMovieDb">
-                <form id="searchMovieDb" onSubmit={this.submitHandler}>
-                  <label htmlFor="search">
-                    {" "}
-                    <input
-                      name="search"
-                      id="search"
-                      ref="searchTf"
-                      type="search"
-                      placeholder="search the movie database..."
-                      className="form-control"
-                    />
-                  </label>
-                </form>
-              </label>
+              <form id="searchMovieDb" onSubmit={this.submitHandler}>
+                <label htmlFor="search">
+                  {" "}
+                  <input
+                    id="search"
+                    ref="searchTf"
+                    type="search"
+                    placeholder="search the movie database..."
+                    className="form-control"
+                  />
+                </label>
+              </form>
             </div>
           </div>
         </div>
